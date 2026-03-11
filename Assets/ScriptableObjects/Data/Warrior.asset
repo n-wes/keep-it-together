@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
+  m_Name: Warrior
+  m_EditorClassIdentifier: KeepItTogether.Data::KeepItTogether.Data.NPCData
+  npcName: Warrior
+  description: A stout defender with heavy armor and a sturdy shield. Slow but
+    tough, the Warrior holds the line when others falter.
+  maxHP: 150
+  attackDamage: 12
+  attackSpeed: 0.8
+  moveSpeed: 2.5
+  attackRange: 1.5
+  maxHunger: 100
+  maxMorale: 100
+  maxRest: 100
+  hungerDecayRate: 0.012
+  moraleDecayRate: 0.004
+  restDecayRate: 0.009
+  recruitCost: 60
+  defaultPersonality:
+    bravery: 0.85
+    loyalty: 0.7
+    aggression: 0.6
+    sociability: 0.4
+    laziness: 0.3
+    intelligence: 0.4

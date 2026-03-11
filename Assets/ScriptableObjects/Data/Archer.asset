@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1b2c3d4e5f6a7b8c9d0e1f2a3b4c5d6, type: 3}
+  m_Name: Archer
+  m_EditorClassIdentifier: KeepItTogether.Data::KeepItTogether.Data.NPCData
+  npcName: Archer
+  description: A nimble sharpshooter who prefers to fight from the safety of the
+    walls. Fragile up close but deadly at range.
+  maxHP: 70
+  attackDamage: 18
+  attackSpeed: 1.2
+  moveSpeed: 3.5
+  attackRange: 6
+  maxHunger: 100
+  maxMorale: 100
+  maxRest: 100
+  hungerDecayRate: 0.01
+  moraleDecayRate: 0.007
+  restDecayRate: 0.008
+  recruitCost: 55
+  defaultPersonality:
+    bravery: 0.2
+    loyalty: 0.5
+    aggression: 0.4
+    sociability: 0.6
+    laziness: 0.5
+    intelligence: 0.7
