@@ -1,4 +1,8 @@
-# Unity specific
+# ===========================
+# Unity .gitignore
+# ===========================
+
+# Unity generated folders
 [Ll]ibrary/
 [Tt]emp/
 [Oo]bj/
@@ -6,19 +10,16 @@
 [Bb]uilds/
 [Ll]ogs/
 [Uu]ser[Ss]ettings/
-
-# MemoryCaptures
 [Mm]emoryCaptures/
-
-# Recordings
 [Rr]ecordings/
+[Aa]sset[Ss]tore[Tt]ools/
 
-# Asset meta data
+# Unity3D generated meta files (for asset databases)
 *.pidb.meta
 *.pdb.meta
 *.mdb.meta
 
-# Unity3D generated
+# Unity3D generated project files
 *.csproj
 *.unityproj
 *.sln
@@ -37,7 +38,20 @@
 # Unity Package Manager
 /[Pp]ackages/com.unity.*/
 
-# OS generated
+# ===========================
+# Build outputs
+# ===========================
+*.apk
+*.aab
+*.unitypackage
+*.app
+*.exe
+*.dll
+!Assets/Plugins/**/*.dll
+
+# ===========================
+# OS generated files
+# ===========================
 .DS_Store
 .DS_Store?
 ._*
@@ -45,24 +59,55 @@
 .Trashes
 ehthumbs.db
 Thumbs.db
+Desktop.ini
+$RECYCLE.BIN/
 
-# IDE
-.idea/
+# ===========================
+# IDE / Editor folders
+# ===========================
 .vs/
 .vscode/
+.idea/
 *.swp
 *.swo
+*~
 
-# Builds
-*.apk
-*.aab
-*.unitypackage
-*.app
+# Rider
+.idea/
+*.sln.iml
 
-# Crashlytics
+# Visual Studio
+ExportedObj/
+*.svd
+*.unityproj
+*.user
+*.tmp
+*.pidb
+
+# ===========================
+# Crash reports
+# ===========================
 crashlytics-build.properties
+sysinfo.txt
+crash.dmp
+*.stackdump
 
+# ===========================
 # ML-Agents
+# ===========================
 ml-agents/results/
 *.onnx
 *.nn
+
+# ===========================
+# Plastic SCM (ignore if not used)
+# ===========================
+*.private.0
+*.private
+
+# ===========================
+# Gradle (Android builds)
+# ===========================
+.gradle/
+local.properties
+*.class
