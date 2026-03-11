@@ -130,10 +130,57 @@ The twist: **you don't directly control combat.** Your defenders fight, eat, sle
 | Engine | Unity 2022+ LTS |
 | Language | C# |
 | ML Framework | Unity ML-Agents Toolkit |
+| ML Inference | Unity Barracuda (on-device `.onnx` runtime) |
 | Platforms | iOS, Android |
 | Version Control | Git + GitHub |
-| CI/CD | GitHub Actions (build pipelines) |
+| CI/CD | Local builds (optional GitHub Actions) |
 | Art Style | 2D pixel art or hand-drawn (TBD) |
+
+---
+
+## 🏠 Fully Local Architecture — Zero Cloud Dependencies
+
+This project is designed to run **entirely offline** with no cloud services, servers, or external APIs required — from development through to the player's device.
+
+### Development (Your Mac)
+
+| What | How |
+|------|-----|
+| **Game dev** | Unity Editor runs locally |
+| **ML training** | Unity ML-Agents trains models on your machine (CPU; GPU optional via Metal) |
+| **Testing** | iOS Simulator, Android Emulator, or USB to physical device |
+| **Builds** | Unity builds `.ipa` (iOS) and `.apk`/`.aab` (Android) locally |
+| **Version control** | Local Git repo, pushed to GitHub (no cloud build required) |
+
+### On the Player's Device
+
+| What | How |
+|------|-----|
+| **AI/ML inference** | Trained models are exported as `.onnx` files and bundled into the app. Unity Barracuda runs inference on-device — no server calls, no internet needed |
+| **Game state** | All save data is local (PlayerPrefs / JSON / SQLite) |
+| **Idle progression** | Calculated on-device using elapsed time delta — no server clock |
+| **Adaptive behavior** | In-game state modifies how model outputs are interpreted at runtime, not via live cloud ML |
+| **Events & storytelling** | Procedural generation runs on-device using local game state as context |
+
+### What This Means
+
+```
+Training (your Mac)          Shipping (player's phone)
+┌──────────────────┐         ┌──────────────────────┐
+│ ML-Agents trains │  .onnx  │ Barracuda runs       │
+│ NPC behavior     │ ──────► │ trained model         │
+│ locally (Python)  │  baked  │ on-device, offline   │
+└──────────────────┘  into   └──────────────────────┘
+                      app
+```
+
+- **No backend server** — the game is fully client-side
+- **No API calls** — all AI runs on-device
+- **No cloud costs** — $0/month infrastructure
+- **Offline-first** — players never need internet to play
+- **Privacy-friendly** — no player data leaves the device
+
+> The only external dependency is app store distribution (Apple App Store / Google Play), which is unavoidable for any mobile game.
 
 ---
 
